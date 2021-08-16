@@ -33,8 +33,6 @@ class LoginUser extends CI_Controller
                 $this->session->set_flashdata('error', 'ERROR_MESSAGE_HERE');
             } else {
                 $this->load->view('frontpage');
-                // $data['error'] = "error message";
-                // $this->load->view('loginuser', $data);
             }
         }
     }
