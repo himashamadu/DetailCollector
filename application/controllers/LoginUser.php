@@ -29,8 +29,8 @@ class LoginUser extends CI_Controller
             $result=$this->loginmodel->fetch_data($user, $pass);
             
             if (empty($result)) {
+                $this->session->set_flashdata('warn', 'Check the Details Again');
                 return redirect($redirect_to);
-                $this->session->set_flashdata('error', 'ERROR_MESSAGE_HERE');
             } else {
                 $this->load->view('frontpage');
             }

@@ -13,13 +13,13 @@ class loginmodel extends CI_Model
         return $query->result_array();
     }
 
-    public function insert()
+/*
+    public function check($email)
     {
-        $data=array(
-            'name'=>'user',
-            'password'=>'pass',
-            'email'=>'email'
-        );
-        $this->db->insert('user', $data);
-    }
+        $this->db->select('email');
+        $this->db->from('user');
+        $this->db->where('email', $email);
+        $query = $this->db->get();
+        return $query->result_array();
+    }*/
 }

@@ -8,7 +8,7 @@ defined('BASEPATH') or exit('No direct Script access allowed');
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <title>Login Page</title>
+    <title>Change Password</title>
     <meta content="Admin Dashboard" name="description" />
     <meta content="ThemeDesign" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -27,14 +27,14 @@ defined('BASEPATH') or exit('No direct Script access allowed');
     <div class="alert alert-success">
         <?=$this->session->flashdata('status')?>
     </div>
-    <?php } elseif ($this->session->flashdata('warn')) { ?>
+    <?php } elseif ($this->session->flashdata('error')) { ?>
     <div class="alert alert-warning">
-        <?=$this->session->flashdata('warn')?>
+        <?=$this->session->flashdata('error')?>
     </div>
     <?php }?>
 </div>
     <!--add POST method-->
-    <form method="post" action="<?php echo base_url('LoginUser/login_user'); ?>">
+    <form method="post" action="<?php echo base_url('Changepass/update'); ?>">
         <!-- Loader -->
         <div id="preloader">
             <div id="status">
@@ -56,50 +56,38 @@ defined('BASEPATH') or exit('No direct Script access allowed');
 
 
 
-                                        <h2 class="text-muted text-center font-25"><b>Sign In</b></h2>
+                                        <h2 class="text-muted text-center font-25"><b>Change Password</b></h2>
 
 
                                         <div class="p-2">
                                             <form class="form-horizontal m-t-20" action="index.html">
-
-                                                <div class="form-group row">
+                                            <div class="form-group row">
                                                     <div class="col-12">
-                                                        <input class="form-control" type="text" required=""
-                                                            placeholder="Username" name="user">
+                                                        <input class="form-control" type="email" required=""
+                                                            placeholder="Email" name="email">
                                                     </div>
                                                 </div>
-
                                                 <div class="form-group row">
                                                     <div class="col-12">
                                                         <input class="form-control" type="password" required=""
-                                                            placeholder="Password" name="pass">
+                                                            placeholder="Enter New Password" name="pass">
                                                     </div>
                                                 </div>
-
-
-
+                                                <div class="form-group row">
+                                                    <div class="col-12">
+                                                        <input class="form-control" type="password" required=""
+                                                            placeholder="Enter Again" name="passRes">
+                                                    </div>
+                                                </div>
                                                 <div class="form-group text-center row m-t-20">
                                                     <div class="col-12">
-
+                                                   
+                                                            
                                                         <button
                                                             class="btn btn-primary btn-block waves-effect waves-light"
-                                                            type="submit" name="login" value="Login">Log In</button>
-
-
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group m-t-10 mb-0 row">
-                                                    <div class="col-sm-7 m-t-20">
-                                                        <a href="<?php echo base_url('Forgetpass'); ?>" class="text-muted"><i
-                                                                class="mdi mdi-lock"></i> Forgot your password?</a>
-                                                    </div>
-                                                    <div class="col-sm-5 m-t-20">
-                                                        <a href="<?php echo base_url('Register'); ?>"
-                                                            class="text-muted"><i class="mdi mdi-account-circle"></i>
-                                                            Create an
-                                                            account</a>
-                                                    </div>
+                                                            type="submit" name="login" value="Login">Reset</button>
+                                                           
+                                                        </div>
                                                 </div>
                                             </form>
                                         </div>

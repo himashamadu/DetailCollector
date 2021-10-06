@@ -12,7 +12,9 @@ h1 {
     color: rgb(131, 139, 141);
     font-size: xx-large;
 }
-
+.messageEr{
+    text-align: center;
+}
 .outline {
     box-sizing: content-box;
     text-align: center;
