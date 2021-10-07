@@ -13,73 +13,111 @@ defined('BASEPATH') or exit('No direct script access allowed');
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link href="<?php echo base_url()."assets/";?>css/styleFront.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url()."assets/";?>css/styleFpage.css" rel="stylesheet" type="text/css">
 
 </head>
 
 <body>
     <div class="outline">
-        <h1 style="text-align: center;">Expense Tracker</h1>
-        <div class="label-display">
-            <label name="income" id="item"><b>Income </b><br> +35000</label>
-            <label name="Expense" id="item"><b>Expense</b> <br> -4500</label>
+        <div class="container">
+
+            <h5>User Details</h5>
+            <?php if ($this->session->flashdata('status')) {?>
+            <div class="alert alert-success">
+                <?=$this->session->flashdata('status')?>
+            </div>
+            <?php } elseif ($this->session->flashdata('warn')) { ?>
+            <div class="alert alert-warning">
+                <?=$this->session->flashdata('warn')?>
+            </div>
+            <?php }?>
+
+            <form method="post" action="<?php echo base_url('FrontPage/insert'); ?>">
+
+                <div class="form-group col-md-12">
+                    <label>Full Name</label>
+                    <input type="text" class="form-control form-control-sm" name="name">
+                    <?php echo form_error("name");?>
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Age</label>
+                    <input type="number" class="form-control form-control-sm" name="age">
+                    <small><?php echo form_error('age');?></small>
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label>Address</label>
+                    <input type="text" class="form-control form-control-sm" name="address">
+                    <small><?php echo form_error('address');?></small>
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Contact Number</label>
+                    <input type="text" class="form-control form-control-sm" name="contact">
+                    <small><?php echo form_error('contact');?></small>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control form-control-sm" name="email">
+                    <small><?php echo form_error('email');?></small>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary" id="btnSize" name="add"><i class="fa fa-plus"></i>
+                        Add</button>
+                </div>
+            </form>
         </div>
-        <div class="button">
-            <button id="buttonAdd">Add new Transaction</button>
-        </div>
-
-        <div class="tableInput">
-
-            <label id="labelDisplay">Text</label>
-
-            <label id="labelDisplay">Amount</label>
-
-            <label id="labelDisplay">Date</label>
-
-
-
-            <input type="text" id="addDetail">
-            <input type="text" id="addDetail">
-            <input type="date" id="addDetail">
-
-            <label></label>
-            <label id="note"> Negative -expense <br> Positive +income </label>
-
-
-        </div>
-
+        <br>
         <div>
-            <table class="table text-center">
-                <thead>
-                    <tr>
-                        <th scope="col">History</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div class="table-wrapper-scroll-y my-custom-scrollbar table table-bordered" id="tableLen">
+                <div class="tableProduct-body">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th scope="col">Family_ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Age</th>
+                                <th scope="col">Address</th>
+                                <th scope="col">Contact Number</th>
+                                <th scope="col">Email</th>
+                                <th scope="col" colspan="2" style="text-align: center;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                  
+                        foreach ($fetch_data->result() as $row) {
+                            ?>
+                            <tr>
 
-                    <tr>
-
-                        <td>Salary</td>
-                        <td>+35000</td>
-
-                        <td>
-                            <button type="button" class="btn btn-success" id="changeButton"><i class="fa fa-edit"></i>
-                                Edit</button>
-                            <button type="button" class="btn btn-danger" id="changeButton"><i class="fa fa-close"></i>
-                                Delete</button>
-                        </td>
-
-                    </tr>
-
-                </tbody>
+                                <td><?php echo $row->id; ?></td>
+                                <td><?php echo $row->name; ?></td>
+                                <td><?php echo $row->age; ?></td>
+                                <td><?php echo $row->address; ?></td>
+                                <td><?php echo $row->contact; ?></td>
+                                <td><?php echo $row->email; ?></td>
+                                <td>
+                                    <a href="<?php echo base_url('FrontPage/edit/'.$row->id); ?>"
+                                        class="btn btn-success" id="btnSize"><i class="fa fa-edit"></i> Edit</a>
+                                </td>
+                                <td>
+                                    <a href="<?php echo base_url('FrontPage/delete/'.$row->id); ?>"
+                                        class="btn btn-danger" id="btnSize"><i class="fa fa-close"></i> Delete</a>
 
 
-            </table>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                        <?php
+                        }
+                   
+                    ?>
+
+                    </table>
+                </div>
+
+            </div>
         </div>
     </div>
-
 </body>
-
 </html>

@@ -1,0 +1,92 @@
+h5 {
+    color: black;
+    text-align: center;
+    font-size: xx-large;
+}
+
+body {
+    position: relative;
+    height: 100vh;
+    background: url("../images/bg-1.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.containerEdit {
+    box-sizing: content-box;
+    margin: auto;
+    margin-top: 50px;
+    width: 300px;
+    height: auto;
+    padding: 30px;
+    border-radius: 2px;
+    background-color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.outline {
+    display: grid;
+    margin-top: 20px;
+    margin-bottom: 0;
+    grid-template-columns: auto auto auto;
+}
+
+input {
+    font-weight: bold;
+}
+
+label {
+    color: grey;
+    font-size: small;
+    font-weight: bold;
+    margin: 2px;
+}
+
+.my-custom-scrollbar {
+    position: relative;
+    height: 200px;
+    overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+#tableLen {
+    margin-top: 50px;
+    height: 530px;
+}
+
+.table {
+    box-sizing: border-box;
+    margin: 20px;
+    height: 600px;
+    width: auto;
+    background-color: rgb(243, 240, 240);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.container {
+    box-sizing: content-box;
+    margin: 20px;
+    margin-left: 20px;
+    margin-top: 50px;
+    width: 300px;
+    height: 472px;
+    padding: 30px;
+    border-radius: 2px;
+    background-color: whitesmoke;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+#btnSize {
+    width: 75px;
+    font-size: small;
+    font-weight: bold;
+    height: 30px;
+    padding: 3px;
+}
+
+td{
+    text-align: center;
+}

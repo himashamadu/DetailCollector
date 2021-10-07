@@ -8,7 +8,7 @@ defined('BASEPATH') or exit('No direct Script access allowed');
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <title>Drixo - Responsive Booststrap 4 Admin & Dashboard</title>
+    <title>Register</title>
     <meta content="Admin Dashboard" name="description" />
     <meta content="ThemeDesign" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -51,21 +51,21 @@ defined('BASEPATH') or exit('No direct Script access allowed');
                                             <div class="form-group row">
                                                 <div class="col-12">
                                                     <input class="form-control" type="email" required=""
-                                                        placeholder="Email">
+                                                        placeholder="Email" name="email">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <div class="col-12">
                                                     <input class="form-control" type="text" required=""
-                                                        placeholder="Username">
+                                                        placeholder="Username" name="user">
                                                 </div>
                                             </div>
 
                                             <div class="form-group row">
                                                 <div class="col-12">
                                                     <input class="form-control" type="password" required=""
-                                                        placeholder="Password">
+                                                        placeholder="Password" name="pass">
                                                 </div>
                                             </div>
 
@@ -80,7 +80,7 @@ defined('BASEPATH') or exit('No direct Script access allowed');
 
                                             <div class="form-group m-t-10 mb-0 row">
                                                 <div class="col-12 m-t-20 text-center">
-                                                    <a href="pages-login.html" class="text-muted">Already have
+                                                    <a href="<?php echo base_url('LoginUser'); ?>" class="text-muted">Already have
                                                         account?</a>
                                                 </div>
                                             </div>
