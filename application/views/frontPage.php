@@ -16,7 +16,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
     <link href="<?php echo base_url()."assets/";?>css/styleFpage.css" rel="stylesheet" type="text/css">
 
 </head>
-
 <body>
     <div class="outline">
         <div class="container">

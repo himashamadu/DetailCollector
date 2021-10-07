@@ -18,12 +18,25 @@ defined('BASEPATH') or exit('No direct Script access allowed');
     <link href="<?php echo base_url()."assets/";?>css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url()."assets/";?>css/icons.css" rel="stylesheet" type="text/css">
     <link href="<?php echo base_url()."assets/";?>css/style.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url()."assets/";?>css/styleFront.css" rel="stylesheet" type="text/css">
 
 </head>
 
 
 <body class="fixed-left">
 
+<div class="messageEr">
+    <?php if ($this->session->flashdata('status')) {?>
+    <div class="alert alert-success">
+        <?=$this->session->flashdata('status')?>
+    </div>
+    <?php } elseif ($this->session->flashdata('warn')) { ?>
+    <div class="alert alert-warning">
+        <?=$this->session->flashdata('warn')?>
+    </div>
+    <?php }?>
+</div>
+<form method="post" action="<?php echo base_url('Register/insertUser'); ?>">
     <!-- Loader -->
     <div id="preloader">
         <div id="status">
@@ -111,7 +124,7 @@ defined('BASEPATH') or exit('No direct Script access allowed');
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>
-
+    </form>
 </body>
 
 </html>
